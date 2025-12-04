@@ -235,50 +235,46 @@ Thus, the program was implemented and executed successfully, and the required ou
 ```
 #include <stdio.h>
 
-// Step 3: Define structure
 struct employee {
-    int eno;           // employee number
-    char ename[50];    // employee name
-    float salary;      // employee salary
+    int eno;
+    char ename[50];
+    float salary;
 };
 
 int main() {
-    struct employee emp[50];  // Step 4: Array of structures
+    struct employee emp[100];
     int n, i;
     float high;
 
-    // Step 5: Input number of employees
-    printf("Enter the number of employees: ");
+    printf("Enter number of employees: ");
     scanf("%d", &n);
 
-    // Step 6: Input employee details
-    for (i = 0; i < n; i++) {
-        printf("\nEnter details of employee %d:\n", i + 1);
+    for(i = 0; i < n; i++) {
+        printf("\nEnter details of employee %d\n", i + 1);
         printf("Employee Number: ");
         scanf("%d", &emp[i].eno);
+
         printf("Employee Name: ");
-        scanf(" %[^\n]", emp[i].ename);  // allows spaces in name
-        printf("Employee Salary: ");
+        scanf(" %[^\n]", emp[i].ename);   
+
+        printf("Salary: ");
         scanf("%f", &emp[i].salary);
     }
 
-    // Step 7: Initialize high with first employee's salary
     high = emp[0].salary;
 
-    // Step 8: Find highest salary
-    for (i = 1; i < n; i++) {
-        if (emp[i].salary > high) {
+    for(i = 1; i < n; i++) {
+        if(emp[i].salary > high) {
             high = emp[i].salary;
         }
     }
 
-    // Step 9: Print employees with highest salary
-    printf("\nEmployee(s) with the highest salary:\n");
-    for (i = 0; i < n; i++) {
-        if (emp[i].salary == high) {
-            printf("Employee Number: %d\n", emp[i].eno);
-            printf("Employee Name  : %s\n", emp[i].ename);
-            printf("Employee Salary: %.2f\n\n", emp[i].salary);
+    printf("\nEmployee(s) with highest salary:\n");
+    for(i = 0; i < n; i++) {
+        if(emp[i].salary == high) {
+            printf("\nEmployee Number : %d\n", emp[i].eno);
+            printf("Employee Name   : %s\n", emp[i].ename);
+            printf("Salary          : %.2f\n", emp[i].salary);
         }
     }
 
@@ -286,7 +282,8 @@ int main() {
 }
 ```
 # Output:
-<img width="1348" height="746" alt="image" src="https://github.com/user-attachments/assets/c4be6560-7e3b-48e5-b286-b5628b6d47ba" />
+<img width="1627" height="661" alt="image" src="https://github.com/user-attachments/assets/e931b25d-599c-4a92-a719-990075318c13" />
+
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
